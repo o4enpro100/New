@@ -5,8 +5,6 @@ side = 'x'
 
 def print_field():
     print("  1 2 3")
-    # for row in field:
-    #     print(row[0], row[1], row[2])
     for i in range(3):
         print(i+1, field[i][0], field[i][1], field[i][2])
 
@@ -22,6 +20,7 @@ def step():
         return False
     field[x-1][y-1] = side
     return True
+
 def win():
 
     def getline(row = -1, col = -1):
@@ -45,6 +44,6 @@ def win():
 
 print_field()
 while not win():
-    while not step(): continue
+    while not step(): pass
     print_field()
     side = swap_side(side)
